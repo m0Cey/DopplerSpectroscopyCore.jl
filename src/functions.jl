@@ -18,10 +18,10 @@ value `x`, with a most probable dimensionless velocity `x₀` of the distributio
 * Wikipedia: https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution
 
 # Examples
-    julia> maxwell_x(1.0, 2.0)
-    0.15163266492815836
-    julia> maxwell_x(0.0, 1.0)
-    0.3989422804014327
+    julia> fᵥ(1, 2)
+    0.21969564473386122
+    julia> fᵥ(0, 1)
+    0.5641895835477563
 """
 fᵥ(x::Real, x₀::Real) = exp(-x^2/x₀^2) / (x₀*√π)
 

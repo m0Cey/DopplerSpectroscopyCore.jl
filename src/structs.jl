@@ -1,4 +1,45 @@
 """
+    LightSource
+
+Class that describes light source which is used to interact with the quantum
+two-level system.
+
+# Fields
+* `wavelength` :
+    Represents a value of the main light source wavelength
+    (m).
+* `rabi_freq_1` :
+    Represents a value of the Rabi frequency originated from the interaction between
+    direct light beam and two-level system
+    (units of spontaneous emission frequency `γ₀`).
+* `rabi_freq_2` :
+    Represents a value of the Rabi frequency originated from the interaction between
+    reverse/reflected light beam and two-level system
+    (units of spontaneous emission frequency `γ₀`).
+
+# Arguments
+Refer to fields' description.
+
+# Returns
+* `Laser` :
+    composite type instance.
+
+# References
+* Wikipedia: https://en.wikipedia.org/wiki/Laser
+* Wikipedia: https://en.wikipedia.org/wiki/Optical_parametric_amplifier
+* Wikipedia: https://en.wikipedia.org/wiki/Spontaneous_emission
+"""
+struct LightSource
+    wavelength::Float64
+    rabi_freq_1::Float64
+    rabi_freq_2::Float64
+    function LightSource(λ::Real, Ω₁::Real, Ω₂::Real = 0.0)
+        return new(λ, Ω₁, Ω₂)
+    end
+end
+
+
+"""
     Quantum2Level
 
 Class that describes the quantum two-level system via parameters of that system.
@@ -65,46 +106,5 @@ struct Quantum2Level
         v₀ = √(2*k_B*T / M)
         x₀ = v₀*k / γ₀
         return new(M, T, γ₀, γₒₚₜ, x₀)
-    end
-end
-
-
-"""
-    LightSource
-
-Class that describes light source which is used to interact with the quantum
-two-level system.
-
-# Fields
-* `wavelength` :
-    Represents a value of the main light source wavelength
-    (m).
-* `rabi_freq_1` :
-    Represents a value of the Rabi frequency originated from the interaction between
-    direct light beam and two-level system
-    (units of spontaneous emission frequency `γ₀`).
-* `rabi_freq_2` :
-    Represents a value of the Rabi frequency originated from the interaction between
-    reverse/reflected light beam and two-level system
-    (units of spontaneous emission frequency `γ₀`).
-
-# Arguments
-Refer to fields' description.
-
-# Returns
-* `Laser` :
-    composite type instance.
-
-# References
-* Wikipedia: https://en.wikipedia.org/wiki/Laser
-* Wikipedia: https://en.wikipedia.org/wiki/Optical_parametric_amplifier
-* Wikipedia: https://en.wikipedia.org/wiki/Spontaneous_emission
-"""
-struct LightSource
-    wavelength::Float64
-    rabi_freq_1::Float64
-    rabi_freq_2::Float64
-    function LightSource(λ::Real, Ω₁::Real, Ω₂::Real = 0.0)
-        return new(λ, Ω₁, Ω₂)
     end
 end
