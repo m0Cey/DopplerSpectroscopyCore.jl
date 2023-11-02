@@ -44,7 +44,7 @@ each of them.
     github page or create an issue)
 """
 function probe(δ::Real, two_level::Quantum2Level, light::LightSource)::Real
-    nₑ, error = quadgk(
+    nₑ, error = QuadGK.quadgk(
         x -> ρₑₑ(x, δ, two_level, light),
         -Inf, +Inf
     )
