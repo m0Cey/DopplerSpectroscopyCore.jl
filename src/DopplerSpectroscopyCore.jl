@@ -1,6 +1,6 @@
 module DopplerSpectroscopyCore
 
-using QuadGK
+import QuadGK
 
 
 # documented for more readability of other file's code
