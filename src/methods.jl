@@ -14,7 +14,7 @@ function ρₑₑ(x::Real, δ::Real, self::Quantum2Level, light::LightSource)
 end
 
 
-"""
+"""@docs
     probe(δ::Real, two_level, light) -> Real
     probe(δ_vec::Vector{T}, two_level, light) -> Vector{T} where T<:Real
     probe(δ_range::LinRange{T1, T2}, two_level, light)

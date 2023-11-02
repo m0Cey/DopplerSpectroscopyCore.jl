@@ -1,4 +1,4 @@
-"""
+"""@docs
     fᵥ(x::Real, x₀::Real) -> Real
 
 Compute the value of the Maxwell-Boltzmann distribution for a given dimensionless velocity
@@ -25,7 +25,7 @@ value `x`, with a most probable dimensionless velocity `x₀` of the distributio
 """
 fᵥ(x::Real, x₀::Real) = exp(-x^2/x₀^2) / (x₀*√π)
 
-"""
+"""@docs
     sₓ(x::Real, δ::Real, Ω::Real, γ::Real) -> Real
 
 Compute the saturation parameter value of a quantum two-level system for a
