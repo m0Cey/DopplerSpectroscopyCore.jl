@@ -1,4 +1,4 @@
-"""
+"""@docs
     LightSource
 
 Class that describes light source which is used to interact with the quantum
@@ -39,7 +39,7 @@ struct LightSource
 end
 
 
-"""
+"""@docs
     Quantum2Level
 
 Class that describes the quantum two-level system via parameters of that system.
